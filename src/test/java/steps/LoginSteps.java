@@ -7,10 +7,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.time.Duration;
 import java.util.Objects;
 
 public class LoginSteps {
@@ -31,22 +28,22 @@ public class LoginSteps {
     }
 
 
-    @And("je saisiee {string}")
-    public void jeSaisiee(String username) {
+    @And("Je saisie userName {string}")
+    public void setUserName(String username) {
         WebElement Username;
         Username = driver.findElement(By.id("loginFrm_loginname"));
         Username.sendKeys(username);
     }
 
-    @And("je saisie {string}")
-    public void jeSaisie(String password) {
+    @And("Je saisie password {string}")
+    public void setPassword(String password) {
         WebElement Password;
         Password = driver.findElement(By.id("loginFrm_password"));
         Password.sendKeys(password);
     }
 
     @When("je clique sur le bouton Login")
-    public void je_clique_sur_le_bouton_login() {
+    public void onClickLogin() {
 
         WebElement buttonConnecter;
         buttonConnecter = driver.findElement(By.xpath("//*[@id=\"loginFrm\"]/fieldset/button"));
@@ -54,7 +51,7 @@ public class LoginSteps {
     }
 
     @Then("redirection vers la page Home")
-    public void redirection_vers_la_page_home() {
+    public void redirectToHomePage() {
 
 
         String CurrentUrl = driver.getCurrentUrl();
@@ -66,5 +63,10 @@ public class LoginSteps {
         }
 
 
+    }
+
+    @Then("un message derreur saffiche {string}")
+    public void displayMessage(String message) {
+        System.out.println(message);
     }
 }
