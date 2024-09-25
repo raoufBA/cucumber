@@ -37,10 +37,10 @@ public class Logout {
 
         }
 
-
+        DriverManager.quitDriver();
     }
 
-    }
+}
 
 
 

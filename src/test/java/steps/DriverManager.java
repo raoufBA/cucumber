@@ -16,7 +16,7 @@ public class DriverManager {
             ChromeOptions options = new ChromeOptions();
             driver = new ChromeDriver(options.addArguments("--disable-search-engine-choice-screen"));
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-            driver.manage().window().maximize();
+//            driver.manage().window().maximize();
         }
 
         return driver;

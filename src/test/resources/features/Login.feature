@@ -6,7 +6,7 @@ Feature: tester la fonctionnalité Login
     And Je saisie userName "AmelBEN"
     And Je saisie password "Amel2024."
     And je clique sur le bouton Login
-    Then redirection vers la page Home
+    Then redirection vers la page Home login
 
   @login
   Scenario: tester Login avec un mot de passe vide

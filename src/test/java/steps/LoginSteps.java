@@ -45,6 +45,21 @@ public class LoginSteps {
         loginPage.ClickLoginButton();
     }
 
+    @Then("redirection vers la page Home login")
+    public void redirectToHomePageLogin() {
+
+
+        String CurrentUrl = driver.getCurrentUrl();
+        String Url = "https://automationteststore.com/index.php?rt=account/account";
+        if (Objects.equals(Url, CurrentUrl)) {
+            System.out.println("Login Successful");
+        } else {
+            System.out.println("Login Failed");
+        }
+
+        DriverManager.quitDriver();
+    }
+
     @Then("redirection vers la page Home")
     public void redirectToHomePage() {
 
@@ -57,11 +72,11 @@ public class LoginSteps {
             System.out.println("Login Failed");
         }
 
-
     }
 
     @Then("un message derreur saffiche {string}")
     public void displayMessage(String message) {
         System.out.println(message);
+        DriverManager.quitDriver();
     }
 }
