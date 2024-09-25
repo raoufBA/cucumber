@@ -1,4 +1,5 @@
 Feature: tester la fonctionnalité Login
+  @login
   Scenario: tester Login avec des données valides
     Given je suis dans le site Automation Test Store
     When je clique sur le bouton Login Or registre
@@ -7,7 +8,7 @@ Feature: tester la fonctionnalité Login
     And je clique sur le bouton Login
     Then redirection vers la page Home
 
-
+  @login
   Scenario: tester Login avec un mot de passe vide
     Given je suis dans le site Automation Test Store
     When je clique sur le bouton Login Or registre
@@ -17,7 +18,7 @@ Feature: tester la fonctionnalité Login
     Then un message derreur saffiche "Incorrect login or password provided"
 
 
-
+  @login
   Scenario Outline: tester Login avec données invalides
     Given je suis dans le site Automation Test Store
     When je clique sur le bouton Login Or registre
