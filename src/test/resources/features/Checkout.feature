@@ -1,4 +1,5 @@
 Feature: verifier ma liste d'achat
+  @Checkout
   Scenario: verifier ma liste d'achat apres connexion
     Given je suis dans le site Automation Test Store
     When je clique sur le bouton Login Or registre

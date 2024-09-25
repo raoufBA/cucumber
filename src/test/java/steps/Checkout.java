@@ -1,5 +1,6 @@
 package steps;
 
+import PageFactory.CheckoutPage;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,23 +8,26 @@ import org.openqa.selenium.WebDriver;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Checkout {
 
-    private final WebDriver driver;
+public class Checkout {
+    CheckoutPage checkoutPage;
+    WebDriver driver;
+
 
     public Checkout() {
         driver = DriverManager.getDriver();
-
+        checkoutPage = new CheckoutPage(driver);
     }
+
 
     @Then("cliquer sur Checkout")
     public void cliquer_sur_checkout() {
-        driver.findElement(By.xpath("//*[@id='main_menu_top']/li[4]/a/span")).click();
+        checkoutPage.ClickCheckoutButton();
     }
 
     @Then("cliquer sur confirm order")
     public void cliquer_sur_confirm_order() {
-        driver.findElement(By.xpath("//*[@id='checkout_btn']")).click();
+        checkoutPage.ClickConfirmOrder();
     }
 
     @Then("redirection vers une autre page {string}")
@@ -39,7 +43,7 @@ public class Checkout {
             }
 
         }
-
+        DriverManager.quitDriver();
     }
 
 

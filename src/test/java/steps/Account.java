@@ -33,7 +33,7 @@ public class Account {
     }
 
     @Then("je saisie les nouvelles données")
-    public void je_saisie_les_nouvelles_données() {
+    public void je_saisie_les_nouvelles_donnees() {
         accountPage.je_saisie_les_nouvelles_donnees();
     }
 
@@ -43,7 +43,7 @@ public class Account {
     }
 
     @Then("un message saffiche {string}")
-    public void un_message_saffiche(String string) {
+    public void un_message_saffiche(String message) {
         String pagecontent = driver.findElement(By.tagName("html")).getText();
         List<String> motrecherche = new ArrayList<>();
         motrecherche.add("Your address has been successfully updated");
@@ -51,7 +51,7 @@ public class Account {
             if (pagecontent.contains(mot)) {
                 System.out.println("le mot " + mot + "  existe sur la page");
             } else {
-                System.out.println("le mot " + mot + " n'existe pas sur la page");
+                System.out.println(message);
             }
 
         }
