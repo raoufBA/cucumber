@@ -1,4 +1,5 @@
 Feature: Ajotuer un produit
+  @AddProduct
   Scenario: Ajouter un produit après la connexion
     Given je suis dans le site Automation Test Store
     When je clique sur le bouton Login Or registre
